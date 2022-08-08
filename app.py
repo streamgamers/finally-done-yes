@@ -11,7 +11,7 @@ def home():
     if request.method == "POST":
         session['link'] = request.form.get('url')
         try:
-            url = pytube.YouTube(session['link'])
+            url = YouTube(session['link'])
             url.check_availability()
         except:
             return render_template("error.html")
