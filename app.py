@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect, send_file, session
 from pytube import YouTube
+import pytube
 from io import BytesIO
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ def home():
     if request.method == "POST":
         session['link'] = request.form.get('url')
         try:
-            url = YouTube(session['link'])
+            url = pytube.YouTube(session['link'])
             url.check_availability()
         except:
             return render_template("error.html")
