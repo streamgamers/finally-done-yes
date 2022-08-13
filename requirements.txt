@@ -6,3 +6,4 @@ itsdangerous==2.1.2
 pytube==12.1.0
 Werkzeug==2.2.1
 pytube3==9.6.4
+MarkupSafe==2.1.1
