@@ -20,6 +20,7 @@ def home():
 @app.route("/download", methods = ["GET", "POST"])
 def download_video():
     if request.method == "POST":
+        session['link'] = request.form.get('url')
         buffer = BytesIO()
         url = YouTube(session['link'])
         itag = request.form.get("itag")
